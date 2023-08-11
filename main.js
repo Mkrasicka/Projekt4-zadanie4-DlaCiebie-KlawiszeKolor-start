@@ -33,7 +33,7 @@ const changeColor = (e) => {
                                                  ${blue <= 225? blue++ :blue})`;
       break;
     case 40:
-        if ((red && green && blue <= 225)) {
+        if ((red && green && blue > 0)) {
            red--;
             green--;
             blue--;
