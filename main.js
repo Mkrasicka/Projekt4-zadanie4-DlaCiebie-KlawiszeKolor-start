@@ -7,7 +7,7 @@ let blue = 100;
 document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
 
 const changeColor = (e) => {
-  console.log(e.keyCode, e.which);
+
   // 38 - strzałka do góry
   // 40 - strzalka w dół
 
@@ -28,15 +28,20 @@ const changeColor = (e) => {
   // wersja 2 - instrukcja switch
   switch (e.keyCode) {
     case 38:
-      red++;
-      green ++;
-      blue++;
-      document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+      document.body.style.backgroundColor = `rgb(${red <= 225? red++ :red },
+                                                 ${green <= 225? green++ :green},
+                                                 ${blue <= 225? blue++ :blue})`;
       break;
     case 40:
-      red--;
-      green --;
-      blue--;
+        if ((red && green && blue <= 225)) {
+           red--;
+            green--;
+            blue--;
+         } else  {
+          red;
+          green;
+          blue;
+        };
       document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
       break;
   }
